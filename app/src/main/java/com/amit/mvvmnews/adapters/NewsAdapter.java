@@ -35,8 +35,9 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull NewsAdapter.NewsViewHolder holder, int position) {
+
         holder.tvName.setText(articles.get(position).getTitle().toString());
-        holder.tvDesCription.setText(articles.get(position).toString());
+        holder.tvDescription.setText(articles.get(position).getDescription().toString());
         Picasso.get().load(articles.get(position).getUrlToImage()).into(holder.ivNews);
     }
 
@@ -48,14 +49,14 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     public class NewsViewHolder extends RecyclerView.ViewHolder{
 
         TextView tvName;
-        TextView tvDesCription;
+        TextView tvDescription;
         ImageView ivNews;
 
         public NewsViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvName = itemView.findViewById(R.id.tvName);
-            tvDesCription = itemView.findViewById(R.id.tvDesCription);
+            tvDescription = itemView.findViewById(R.id.tvDesCription);
             ivNews = itemView.findViewById(R.id.ivNews);
 
         }
