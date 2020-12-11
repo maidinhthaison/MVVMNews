@@ -17,7 +17,9 @@ public class NewsViewModel extends ViewModel {
             return;
         }
         newsRepository = NewsRepository.getInstance();
-        mutableLiveData = newsRepository.getNews("google-news", "API_KEY");
+        mutableLiveData = newsRepository.getNews("us",
+                "8aa0966be2374690947369a85661bf43",
+                100);
 
     }
 

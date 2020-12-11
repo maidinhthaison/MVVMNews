@@ -26,9 +26,9 @@ public class NewsRepository {
         newsApi = RetrofitService.cteateService(NewsApi.class);
     }
 
-    public MutableLiveData<NewsResponse> getNews(String source, String key){
+    public MutableLiveData<NewsResponse> getNews(String country, String key, int pageSize){
         MutableLiveData<NewsResponse> newsData = new MutableLiveData<>();
-        newsApi.getNewsList(source, key).enqueue(new Callback<NewsResponse>() {
+        newsApi.getNewsList(country, key, pageSize).enqueue(new Callback<NewsResponse>() {
             @Override
             public void onResponse(Call<NewsResponse> call,
                                    Response<NewsResponse> response) {
